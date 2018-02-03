@@ -1,0 +1,31 @@
+{
+     "manifest_version": 2,
+
+  "name": "socket test",
+  "description": "socket test",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "background": {
+     "page": "index.html",
+     "scripts": [
+          
+     ],
+     "persistent": true
+   },
+   "content_scripts": [
+     {
+       "matches": ["*://*/*","file:///*/*"],
+       "css": [],
+       "js": ["jquery.js","jquery-simulate.js", "content.js"]
+     }
+   ]
+}
