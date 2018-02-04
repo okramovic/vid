@@ -20,16 +20,16 @@ $(function(){
      })
 
      console.info('jquery SAYS HI', window.location.host)
-     var click = document.createEvent("HTMLEvents");
-     click.initEvent("click", true, true);
+     var click = document.createEvent("HTMLEvents")
+     click.initEvent("click", true, true)
 
      
      port.onMessage.addListener( msg =>{
-          console.log('pressed', msg, msg.val)
+          //console.log('pressed', msg, msg.val)
           
           //simulateKeyPress(msg.key)
           if (msg.lastTabId && ownId === msg.lastTabId){
-               console.log('lastTabId fits')
+               //console.log('lastTabId fits')
                const key = msg.val
           
                if  (window.location.host.includes('youtube.com')){
@@ -97,6 +97,36 @@ $(function(){
                               document.querySelector('.skipControl.sc-ir.playControls__control.playControls__next.skipControl__next').dispatchEvent(click)
                          }
 
+               } else if (window.location.host.includes('hovercraft.glitch.me')){
+                         //console.log('its pong')
+
+                         // start game
+                         if (key == 'enter') document.querySelector('#newgame').dispatchEvent(click)
+
+                         // p2 down
+                         else if (key == 'down'){
+                              
+                              document.querySelector('#p2down').dispatchEvent(click)
+
+                         // p2 up
+                         } else if (key == 'up') {
+                              
+                              document.querySelector('#p2up').dispatchEvent(click)
+
+                         // p1 up
+                         } else if (key == 'left') {
+                              
+                              // let e  = document.createEvent("HTMLEvents")
+                              // e.initEvent("click", true, true)
+                              document.querySelector('#p1up').dispatchEvent(click)
+                              
+                         // p1 down
+                         } else if (key == 'right'){
+                              // let e  = document.createEvent("HTMLEvents")
+                              // e.initEvent("click", true, true)
+                              document.querySelector('#p1down').dispatchEvent(click)
+                              
+                         }
                }
 
                // for games?
@@ -115,7 +145,7 @@ $(function(){
 
 
      $('body').keypress(function(e) {
-          console.log('body says - e.which', String.fromCharCode( e.which), e )
+          console.log('body says - e.which or keyCode', String.fromCharCode( e.keyCode), e )
           //simulateKeyPress("s")
 
           //window.dispatchEvent(new KeyboardEvent('keydown',{'key':'s'}));
