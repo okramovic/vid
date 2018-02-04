@@ -48,15 +48,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
 
           console.log('request',  request)
           console.log('sender', sender)
-          
+          if (request ==='ownId'){
+               //sender.tab.id
+               chrome.tabs.sendMessage(sender.tab.id, {ownId: sender.tab.id})
+          }
           if (request =='shouldActivate'){
                //if (request.tab)
 
                chrome.tabs.query({lastFocusedWindow:true, active:true}, (tabs)=>{  // or currentWindow ?
-
                     console.log('tabs', tabs)
 
-                    //sendResponse(tabs[0].url)
                     chrome.tabs.sendMessage(tabs[0].id, tabs[0].url)
                })  
           }
@@ -64,14 +65,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
 
 
 chrome.runtime.onConnect.addListener(function(port) {
-     console.log('port name', port.name)
+     console.log('port name', port.name, port) // port.sender.tab.id
      Gport = port
 
      socket.on('toExt', val =>{
           console.log('val', val )
 
           // send it directly to only last active tab
-          port.postMessage(val)
+          port.postMessage({lastTabId, val})
      })
 
 

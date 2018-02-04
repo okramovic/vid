@@ -1,6 +1,8 @@
 console.info('CONTENT SCRIPT SAYS HI')
 const port = chrome.runtime.connect({name: window.location.origin})
+let ownId
 
+console.log('cont scr port', port)
 //var myevent = document.createEvent('Event');
 
 
@@ -9,27 +11,39 @@ let tabActive
 
 $(function(){
      
-
-
+     // send msg for own id
+     chrome.runtime.sendMessage('ownId', function(response) {
+          console.log('response',response)
+     })
+     chrome.runtime.onMessage.addListener((req, sender, sendResponse)=>{
+          console.log('set ownId response',req, sender)
+          if (req.ownId) {
+               console.log('setting ownId', req.ownId)
+               ownId = req.ownId
+          }
+     })
 
      console.info('jquery SAYS HI', window.location.host)
      var click = document.createEvent("HTMLEvents");
      click.initEvent("click", true, true);
 
      
-     port.onMessage.addListener( key =>{
-          console.log('pressed', key)
+     port.onMessage.addListener( msg =>{
+          console.log('pressed', msg, msg.val)
+          
           //simulateKeyPress(msg.key)
-
-          chrome.runtime.sendMessage('shouldActivate', function(response) {
+          if (msg.lastTabId && ownId === msg.lastTabId){
+               console.log('lastTabId fits')
+               const key = msg.val
+          //chrome.runtime.sendMessage('shouldActivate', function(response) {
                //console.log('response', response);
-          })
-          chrome.runtime.onMessage.addListener((req, sender, sendResponse)=>{
+          //})
+          //chrome.runtime.onMessage.addListener((req, sender, sendResponse)=>{
                     
-                    console.log('?', req, window.location.href, window.location.href === req)
-                    tabActive = req === window.location.href
+                    //console.log('?', req, window.location.href, window.location.href === req)
+                    //tabActive = req === window.location.href
 
-                    if (tabActive){
+                    //if (tabActive){
 
                          if  (window.location.host.includes('youtube.com')){
 
@@ -52,8 +66,9 @@ $(function(){
                                    document.querySelector('.playControl.sc-ir.playControls__control.playControls__play').dispatchEvent(click)
                               }
                          }
-                    }
-          })
+                    //}
+               }
+          //})
           //var e = jQuery.Event("keypress")
           //e.which = e.keyCode = msg.key//.charCodeAt(0)
           //$("body").trigger(e)
