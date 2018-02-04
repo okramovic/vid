@@ -2,7 +2,7 @@
 console.log('bck script says hi');
 const socket = io('https://even.glitch.me')
 
-const madeFor = ['youtube.com','soundcloud.com']
+const madeFor = ['youtube.com/watch','soundcloud.com']
 
 socket.emit('exttest', 'shuba-dooba')
 let Gport
