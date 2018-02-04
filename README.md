@@ -1,6 +1,6 @@
-HUE sockettig test
+Server for Versatile Input Device
 =========================
-sockets - hue - one client - another client - change hue
+Have a look at code [here](https://github.com/okramovic/vid).
 
 
 \ ゜o゜)ノ
