@@ -10,3 +10,7 @@ Deployed server code is [in this branch](https://github.com/okramovic/vid/tree/g
 * [pong](https://hovercraft.glitch.me/)
 
 
+
+_Built at refugeesCode hackathon in Vienna, Austria_
+
+_Won jury prize in category Creativity_ :tada::tada::tada:
