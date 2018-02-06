@@ -1,6 +1,6 @@
-# Versatile Input Device - a remote for the browser
+# Versatile Input Device - a remote for web browser
 
-V.I.D. is Raspberry Pi 3 based modular controller with five buttons that you can use to controll your interactions with web applications - as of now its implemeted with youtube, soundcloud or you can play pong game with your friend. User her-/him-self decides how big or how many buttons the controller should have according to actual needs at the very moment.
+V.I.D. is Raspberry Pi 3 based modular controller with five buttons that you can use to interact with web applications on desktop devices. As of now it's implemented for youtube, soundcloud or you can play pong game with friend. User her-/him-self decides how big or how many buttons the controller should have according to actual needs at the very moment.
 
 Deployed server code is [in this branch](https://github.com/okramovic/vid/tree/glitch).
 
@@ -10,9 +10,9 @@ Deployed server code is [in this branch](https://github.com/okramovic/vid/tree/g
 * [pong](https://hovercraft.glitch.me/) - control paddles (multiplayer), start new game
 
 
+Credits:
+> _Built at refugeesCode hackathon in Vienna, Austria, February 3rd - 4th 2018._
 
-_Built at refugeesCode hackathon in Vienna, Austria_
+> _Won jury prize in category Creativity._ :tada::tada::tada:
 
-_Won jury prize in category Creativity_ :tada::tada::tada:
-
-Pong code used for demo is a modified fork of [Simone's pong](https://github.com/simonewebdesign/pong).
+> _Pong code used for demo is a modified fork of [Simone's pong](https://github.com/simonewebdesign/pong).
