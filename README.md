@@ -5,12 +5,14 @@ V.I.D. is Raspberry Pi 3 based modular controller with five buttons that you can
 Deployed server code is [in this branch](https://github.com/okramovic/vid/tree/glitch).
 
 ### it works for
-* [youtube](https://www.youtube.com/)
-* [soundcloud](https://www.soundcloud.com/)
-* [pong](https://hovercraft.glitch.me/)
+* [youtube](https://www.youtube.com/) - play/pause, toggle video size, mute sound, toggle captions
+* [soundcloud](https://www.soundcloud.com/) - play/pause, previous track, next track, toggle playlist visibility, like track
+* [pong](https://hovercraft.glitch.me/) - control paddles (multiplayer), start new game
 
 
 
 _Built at refugeesCode hackathon in Vienna, Austria_
 
 _Won jury prize in category Creativity_ :tada::tada::tada:
+
+Pong code used for demo is a modified fork of [Simone's pong](https://github.com/simonewebdesign/pong).
