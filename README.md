@@ -10,9 +10,11 @@ Deployed server code is [in this branch](https://github.com/okramovic/vid/tree/g
 * [pong](https://hovercraft.glitch.me/) - control paddles (multiplayer), start new game
 
 
-Credits:
+
+----------------------------
+
 > _Built at refugeesCode hackathon in Vienna, Austria, February 3rd - 4th 2018._
 
 > _Won jury prize in category Creativity._ :tada::tada::tada:
 
-> _Pong code used for demo is a modified fork of [Simone's pong](https://github.com/simonewebdesign/pong).
+> _Pong code used for demo is a modified fork of [Simone's pong](https://github.com/simonewebdesign/pong)._
